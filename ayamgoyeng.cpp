@@ -15,7 +15,7 @@ int main (){
 	if(menu == 1){ 
     	cout<<"Masukkan jumlah : ";
     	cin>>banyak;
-    	total = banyak*15000;
+    	total = banyak*17000;
     	cout<<"Total Menu 1 : "<<total<<endl;
     	
     	print<<"Menu : Ayam Goreng"<<endl;
