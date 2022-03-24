@@ -1,6 +1,6 @@
-#include <iostream>
-#include <fstream>
-using namespace std;
+#include <iostream>																
+#include <fstream>																
+using namespace std;																
 
 int main (){
 	ofstream print;
