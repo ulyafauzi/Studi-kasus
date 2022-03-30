@@ -1,6 +1,6 @@
-#include <iostream>													// Ulya Iqbal Fauzi       2100018477
-#include <string.h>													// Geraldi Jari Assaji    2100018487
-using namespace std;													// Adnan Arkan Kurniawan  2100018488
+#include <iostream>															// 2100018477
+#include <string.h>															// 2100018487
+using namespace std;															// 2100018488
 
 string barang[]={"Sabun Beta","Sabun Alpha","Sabun Anak","Sabun Detol","Sabun Cair","Sabun Padat","Sabun Cuci","Sabun Wangi","Sabun Luxury","SabunWangiV2.0"};
 int harga[]={10000,15000,11500,12000,12000,13500,13000,12000,50000,22500};
