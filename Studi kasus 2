@@ -59,6 +59,7 @@ int main(){
        			cout<<"Bayar      :Rp ";cin>>bayar;
 				harga_akhir=bayar-total_harga;
 				cout<<"Kembalian  :Rp "<<harga_akhir<<endl;
+				system("pause");
 			goto Menu;
 		}
 		
