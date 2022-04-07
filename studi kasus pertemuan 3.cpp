@@ -1,6 +1,6 @@
-#include <iostream>
-#include <fstream>
-using namespace std;
+#include <iostream>													//2100018477
+#include <fstream>													//2100018487	
+using namespace std;													//2100018488
 
 class rumahmakan{
     friend istream& operator>>(istream&, rumahmakan&);
