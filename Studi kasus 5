@@ -1,6 +1,7 @@
 #include <iostream>
-using namespace std;
-
+using namespace std;									//2100018488
+											//2100018478
+											//2100018487
 class krs {
 	public:
 		void krs_mahasiswa();
