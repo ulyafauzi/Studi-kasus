@@ -1,6 +1,6 @@
-#include <iostream>
-#include <string.h>
-using namespace std;
+#include <iostream>										//2100018478
+#include <string.h>										//2100018487
+using namespace std;										//2100018488
 
 class dosen{
 	public :
