@@ -11,7 +11,7 @@ class dosen{
 		int i,n, data[40],maksimum,minimum,jum;
 		float rata;
 		string nama_dosen,matkul;
-		string nama_siswa[10]={"Iqbal","Ulya","Fauzi","Geraldi","Jari","Assaji","Adnan","Kurniawan","Arkan"};
+		string nama_siswa[10]={"Iqbal","Ulya","Fauzi","Geraldi","Jari","Assaji","Adnan","Arkan","Kurniawan"};
 };
 
 void dosen::input(){
