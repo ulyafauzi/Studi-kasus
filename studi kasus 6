@@ -1,0 +1,63 @@
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+class dosen{
+	public :
+		void input();
+		void proses();
+		void output();
+	private :
+		int i,n, data[40],maksimum,minimum,jum;
+		float rata;
+		string nama_dosen,matkul;
+		string nama_siswa[10]={"Iqbal","Ulya","Fauzi","Geraldi","Jari","Assaji","Adnan","Kurniawan","Arkan"};
+};
+
+void dosen::input(){
+	cout<<"Masukan nama Dosen : "; getline(cin,nama_dosen);
+	cout<<"Masukan Mata Kuliah : "; getline(cin,matkul);
+	cout<<"Masukan banyaknya data : "; cin>>n;
+}
+
+void dosen::proses(){
+	for (i=0; i<n; i++)
+        {
+           	cout<<"-----------------------------"<<endl;
+          	cout<<"Siswa ke-"<<i+1<<" : "<<endl;
+          	cout<<"-----------------------------"<<endl;
+           	cout<<"Nama Siswa: "<<nama_siswa[i];
+           	cout<<"\nNilai: ";cin>>data[i];
+           	cout<<endl;
+           	jum = jum + data[i];
+        }
+    rata=jum/n;
+    
+	maksimum = data[0];
+	for(i = 0; i < n; i++) {
+    	if (data[i] > maksimum)  {
+			maksimum = data[i];
+    	}
+	}
+	
+	minimum = data[0];
+	for(i = 0; i < n; i++) {
+		if (data[i] < minimum)  {
+			minimum = data[i];
+    	}
+	}
+}
+
+void dosen::output(){
+	cout << "Nilai Rata-rata = " << rata << endl;
+	cout << "Nilai maksimum adalah " << maksimum << endl;
+	cout << "Nilai minimum adalah " << minimum << endl;
+}
+
+int main(){
+	dosen x;
+	x.input();
+	x.proses();
+	x.output();
+	return 0;
+}
