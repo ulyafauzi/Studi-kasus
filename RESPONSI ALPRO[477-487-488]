@@ -1,0 +1,351 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+struct{
+ 	int hrg[20],jml[20];
+ }buy[10];
+
+
+class market{
+	public :
+		void login();
+		void beranda();
+		void belanja();
+		void checkout();
+	private :
+		string user;
+		char pass[100];
+		string cari;
+		string tambah;
+		string pesan;
+		int metode;
+		int opsi;
+		int saldo;
+		int kode;
+		int pilih[100],jum[100],sub[100],harga[100];
+		string nama, barang[100],warna[100],met[100];
+    string alamat="Jakarta";
+		string nohp;
+		string nama_penerima;
+    string pw="477-487-488";
+		char Jalan[100],Kec[100],Kab[100],KodePos[100],proteksi;
+		int total,pembayaran,ongkir,diskon,voucher;
+		int i;
+};
+
+void market::login()
+{
+    log:
+    cout<<"Masukkan username dan password shopee anda"<<endl;
+	cout<<"Username : ";cin>>user;
+    cout<<"Password : ";cin>>pass;
+    if(user=="iqbal"||user=="geraldi"||user=="adnan") { 
+        if(pass==pw){
+            cout<<"====Berhasil Login===="<<endl;
+            cout<<endl;
+            saldo=100000;
+         }else{
+            cout<<"Password yang anda masukan salah!"<<endl; 
+            goto log;
+         }
+    }
+	else{
+        cout<<"username dan password anda salah!"; 
+        goto log;
+    }
+}
+
+void market::beranda()
+{
+  cout<<"+=======================================================+"<<endl;
+  cout<<"|                                                       |"<<endl;
+  cout<<"|         ****  *                                       |"<<endl;
+  cout<<"|        *      *      *****  *****  *****   *****      |"<<endl;
+  cout<<"|         ***   ****   *   *  *   *  *    *  *    *     |"<<endl;
+  cout<<"|            *  *   *  *   *  ****   *****   *****      |"<<endl;
+  cout<<"|            *  *   *  *   *  *      *       *          |"<<endl;
+  cout<<"|       *****   *   *  *****  *      *****   *****      |"<<endl;
+  cout<<"|                                                       |"<<endl;
+  cout<<"+=======================================================+"<<endl;
+	cout<<"  Saldo Shopeepay "<<endl;
+	cout<<"  Rp "<<saldo<<endl;
+	cout<<"  Cari Produk/Toko : "; cin>>cari;
+}
+
+void market::belanja()
+{
+	int i=0;
+	bool selesai=false;
+	
+	if(cari=="muslim"||cari=="Muslim"){
+    toko:
+		nama="Nama Toko";
+		cout<<"+=================================================================================+"<<endl;
+    cout<<"|                                                                                 |"<<endl;
+		cout<<"|                                   TOKO MUSLIM                                   |"<<endl;
+    cout<<"|                                                                                 |"<<endl;
+		cout<<"+=================================================================================+"<<endl;
+    cout<<"|                          |                                     |                |"<<endl;
+		cout<<"|   voucher GRATIS ONGKIR  |   voucher GRATIS ONGKIR PULAU JAWA  |   voucher COD  |"<<endl;
+		cout<<"|          klaim           |                klaim                |      klaim     |"<<endl;
+    cout<<"|                          |                                     |                |"<<endl;
+		cout<<"+=================================================================================+"<<endl;
+	    cout<<"  1. Peci        Rp.10.000-25.000 "<<endl;
+		cout<<"  2. Baju Koko   Rp.20.000-25.000 "<<endl;
+		cout<<"  3. Sarung      Rp.18.000-20.000 "<<endl;
+		cout<<"  Tekan 0 jika selesai melakukan pemesanan"<<endl<<endl;
+	    
+	    while(selesai==false){ 
+        
+	    	cout<<"  Kode barang : ";
+	    	cin>>pilih[i];
+	
+	    	if (pilih[i]<=4){
+	    		if (pilih[i]==0){
+	    			selesai=true;
+				}else {
+					switch (pilih[i]){ 
+			    		case 1 :  
+						barang[i]="Peci"; 
+						system("clear");
+				        cout<<"|======================================================================"<<endl;
+				        cout<<"|                                 Peci                                 |"<<endl;
+				        cout<<"======================================================================="<<endl;
+				        cout<<"| Kode |     Warna     |     Harga                                     |"<<endl;
+				        cout<<"|----------------------------------------------------------------------|"<<endl;
+				        cout<<"| 01   |    Hitam      | Rp 10.000                                     |"<<endl;
+				        cout<<"| 02   |    Putih      | Rp 25.000                                     |"<<endl;
+				        cout<<"| 03   |    Coklat     | Rp 15.000                                     |"<<endl;
+				        cout<<"======================================================================="<<endl;
+						cout<<"  Pilih Warna: "; 
+						cin>>warna[i];
+						
+						if(warna[i]=="hitam"||warna[i]=="Hitam"){			
+					    buy[i].hrg[i]=10000;
+					    }
+					    else if(warna[i]=="putih"||warna[i]=="Putih"){
+					    buy[i].hrg[i]=25000;
+						}
+					    else if(warna[i]=="coklat"||warna[i]=="Coklat"){	
+				        buy[i].hrg[i]=15000;
+						}
+					    else 
+					    buy[i].hrg[i]=0;
+              break;
+			    		case 2 : 
+          barang[i]="koko";
+        	system ("clear");
+              cout<<"======================================================================="<<endl;
+              cout<<"|                            baju koko  		                            |"<<endl;
+              cout<<"======================================================================="<<endl;
+              cout<<"| Kode |      warna      |     Harga                                   |"<<endl;
+              cout<<"-----------------------------------------------------------------------"<<endl;
+              cout<<"| 01   |    hitam        | Rp. 20.000 			      	                    |"<<endl;
+              cout<<"| 02   |    putih		    | Rp. 21.000			                            |"<<endl;
+              cout<<"| 03   |    coklat		    | Rp. 25.000			                            |"<<endl;
+              cout<<"======================================================================="<<endl;
+           	  cout<<"pilih warna: ";
+        	  cin>>warna[i];
+		 	
+		 	        if(warna[i]=="hitam"||warna[i]=="Hitam"){			
+					    buy[i].hrg[i]=20000;
+					    }
+					    else if(warna[i]=="putih"||warna[i]=="Putih"){
+					    buy[i].hrg[i]=21000;
+						}
+					    else if(warna[i]=="coklat"||warna[i]=="Coklat"){	
+				        buy[i].hrg[i]=21000;
+						}
+					    else 
+					    buy[i].hrg[i]=0;
+						break;
+			    		case 3 : 
+          barang[i]="sarung";
+        	system ("clear");
+				    		cout<<"\n======================================================================"<<endl;
+				        cout<<"|                                 sarung                               |"<<endl;
+				        cout<<"========================================================================"<<endl;
+				        cout<<"| Kode |     Warna     	|     Harga                                   |"<<endl;
+				        cout<<"|----------------------------------------------------------------------|"<<endl;
+				        cout<<"| 01   |    Hijau        | Rp 18.000                                   |"<<endl;
+				        cout<<"| 02   |    Abu-Abu    	| Rp 18.500                                   |"<<endl;
+				        cout<<"| 03   |    Marun      	| Rp 20.000                                   |"<<endl;
+				        cout<<"======================================================================"<<endl;
+						cout<<"  Pilih Warna: "; 
+						cin>>warna[i];
+						
+						if(warna[i]=="hijau"||warna[i]=="Hijau"){			
+					    buy[i].hrg[i]=18000;
+					    }
+					    else if(warna[i]=="Abu-Abu"||warna[i]=="Abu-Abu"){
+					    buy[i].hrg[i]=18500;
+						}
+					    else if(warna[i]=="Marun"||warna[i]=="Marun"){	
+				        buy[i].hrg[i]=20000;
+						}
+					    else 
+					    buy[i].hrg[i]=0;
+						break;
+			    		default : barang[i]="";harga[i]=0;
+					}
+					
+					cout<<"  Jumlah "<<barang[i]<<" : ";
+			    	cin>>jum[i];
+			    	cout<<endl;
+			    	system("clear");
+			    	sub[i]=jum[i]*buy[i].hrg[i];
+			    	
+			    	total=total+sub[i]+1;
+		    		i++;
+            goto toko;
+				}
+			} else {
+				cout<<"Barang yang dipilih tidak sesuai"<<endl;
+				cout<<endl;
+			}
+		}
+	}	
+
+	cout<<"+============================================+"<<endl;
+	cout<<"|             KERANJANG SHOPEE SAYA          |"<<endl;
+	cout<<"+============================================+"<<endl;
+	for (int a=0;a<i;a++){
+		cout<<"  "<<barang[a]<<"	"<<warna[a]<<"	"<<buy[a].hrg[a]<<"	"<<jum[a]<<endl;
+		cout<<"----------------------------------------------"<<endl;
+	}
+	cout<<"+============================================+"<<endl;
+	cout<<"|                 CHECKOUT                   |"<<endl;
+	cout<<"+============================================+"<<endl;
+	cout<<"  Alamat Pengiriman "<<alamat<<endl;
+	cout<<"  Nama penerima :";cin>>nama_penerima;
+	cout<<"  No Hp         :";cin>>nohp;
+	cout<<"  isi alamat (Jalan,Kec,Kab/kota,KodePos)"<<endl;
+	cout<<"  jalan     : ";cin>>Jalan;
+	cout<<"  Kecamatan : ";cin>>Kec;
+	cout<<"  Kabupaten : ";cin>>Kab;
+	cout<<"  Kodepos   : ";cin>>KodePos;
+	cout<<"----------------------------------------------"<<endl;
+  cout<<endl;
+	getchar();
+  system("clear");
+	cout<<"+============================================+"<<endl;
+	cout<<"|                 CHECKOUT                   |"<<endl;
+	cout<<"+============================================+"<<endl;
+	cout<<"  Alamat Pengiriman "<<alamat<<endl;
+	cout<<"  Nama penerima :"<<nama_penerima<<" || No.hp "<<nohp<<endl;
+	cout<<"  isi alamat (Jalan,Kec,Kab/kota,KodePos)"<<endl;
+	cout<<"  Jalan "<<Jalan<<" Kec "<<Kec<<" Kab "<<Kab<<" Kode Pos "<<KodePos<<endl;
+	cout<<"----------------------------------------------"<<endl;
+	cout<<"  "<<nama<<endl;
+	cout<<"----------------------------------------------"<<endl;
+	for (int a=0;a<i;a++){
+		cout<<"  "<<barang[a]<<"	"<<warna[a]<<"	"<<buy[a].hrg[a]<<"	"<<jum[a]<<endl;
+		cout<<"----------------------------------------------"<<endl;
+	}
+	cout<<"Proteksi Produk ( Rp 2000 )"<<endl;
+	cout<<" Y | N"<<endl;
+	cin>>proteksi;
+	if(proteksi=='Y'||proteksi=='y'){
+		total=total+2000;
+	}
+	voc:
+	cout<<"  Voucher Toko"<<endl;
+	cout<<"  Klaim Voucher : ";
+	cout<<"  Opsi Pengiriman"<<endl;
+	cout<<"  1. JNT harga ongkir 20000"<<endl;
+	cout<<"  2. JNE harga ongkir 10000"<<endl;
+	cout<<"  pilih opsi : "; cin>>opsi;
+	switch (opsi){
+		case 1:
+			ongkir=20000;
+			break;
+		case 2:
+			ongkir=10000;
+			break;
+	}
+	cout<<"  Gunakan Voucher Anda : "<<endl;
+	cout<<"  1.Voucher bebas ongkir Rp10000"<<endl;
+	cout<<"  2.Voucher diskon 30% minimal Rp.200.000"<<endl;
+	cout<<"  3.Gunakan ke duanya"<<endl;
+	cout<<"  >> ";cin>>voucher;
+	if(voucher==1){
+		total=total-10000;
+	}
+	else if(voucher==2){
+		if(total>=200000){
+			total=total-(total*0.3);
+		}
+		else{
+			cout<<"\n  Minimal Pembelian anda belum memasuki kriteria"<<endl;
+      cout<<endl;
+      getchar();
+			goto voc;
+			system("clear");
+		}
+	}
+	else if(voucher==3){
+		if(total>=200000){
+			total=total-((total*0.3)+10000);
+		}
+		else{
+			cout<<"\n  Minimal Pembelian anda belum memasuki kriteria"<<endl;
+      cout<<endl;
+			getchar();
+			goto voc;
+			system("clear");
+		}
+	}
+	cout<<"  Pesan : "; 
+	cin.ignore();
+	getline(cin,pesan);
+	cout<<endl;
+  getchar();
+	pembayaran=total+ongkir-1;
+	cout<<"----------------------------------------------"<<endl;
+	cout<<"  TOTAL PESANAN : Rp "<<pembayaran<<endl;
+	m: cout<<"  Metode Pembayaran : "<<endl;
+	cout<<"  1. Shopeepay saldo ["<<saldo<<"]"<<endl;
+	cout<<"  2. COD (cash on demand)"<<endl;
+	cout<<"  3. Transfer Bank"<<endl;
+	cout<<"  pilih metode : "; cin>>metode;
+	switch (metode){
+		case 1:
+			met[i]="Shopeepay";
+			int bayar=saldo-pembayaran;
+			if(bayar>=0){
+				cout<<"====Pembayaran berhasil===="<<endl;
+			}
+			else{
+				cout<<"Saldo Kurang";
+				goto m;
+			}
+	}
+	cout<<"----------------------------------------------"<<endl;
+	cout<<"  Subtotal untuk Produk     : Rp "<<total-1<<endl;
+	cout<<"  Subtotal untuk Pengiriman : Rp "<<ongkir<<endl;
+	
+	ofstream print;
+	print.open("invoice.txt");
+	print<<"+============================================+"<<endl;
+	print<<"|                  INVOICE                   |"<<endl;
+	print<<"+============================================+"<<endl;
+	print<<"  "<<nama<<endl;
+	print<<"----------------------------------------------"<<endl;
+	for (int a=0;a<i;a++){
+		print<<"  "<<barang[a]<<"	"<<warna[a]<<"	"<<harga[a]<<"	"<<jum[a]<<endl;
+		print<<"----------------------------------------------"<<endl;
+	}
+	print<<"  TOTAL PESANAN : Rp "<<pembayaran<<endl;
+	print<<"  Metode Pembayaran : "<<met[i]<<endl;
+	print<<"  Subtotal untuk Produk     : Rp "<<total-1<<endl;
+	print<<"  Subtotal untuk Pengiriman : Rp "<<ongkir<<endl;
+}
+
+int main()
+{
+	market shopee;
+	shopee.login();
+	shopee.beranda();
+	shopee.belanja();
+}
