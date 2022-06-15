@@ -1,9 +1,9 @@
 #include <iostream>
 using namespace std;
 
-class rak{
-	public :
-		void input();
+class rak{											//2100018477
+	public :										//2100018487
+		void input();									//2100018488
 		void proses();
 		void output();
 	private : 
