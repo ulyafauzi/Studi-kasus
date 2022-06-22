@@ -1,8 +1,8 @@
 #include <iostream>
-using namespace std;
-
-class Mahasiswa{
-	public:
+using namespace std;											
+													//2100018477
+class Mahasiswa{											//2100018487
+	public:												//2100018488
 		void input();
 		void output();
 		
